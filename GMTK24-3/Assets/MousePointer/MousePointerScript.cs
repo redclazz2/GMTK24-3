@@ -12,6 +12,9 @@ public class MousePointerScript : MonoBehaviour
 public float stopDistance = 0.1f; // Adjust this value as needed
     public LayerMask obstacleLayer; // LayerMask for obstacles
 
+private Vector2 velocity = Vector2.zero;
+public float speed = 5f;
+public float smoothTime = 0.1f; // Adjust this value to control the smoothness
     void Start()
     {
         Cursor.visible = false;
@@ -26,17 +29,10 @@ public float stopDistance = 0.1f; // Adjust this value as needed
         //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //mousePointerTransform.position = mousePosition;
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // Maintain Z position if working in 2D
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    Vector2 targetPosition = Vector2.SmoothDamp(rigidbody2D.position, mousePosition , ref velocity, smoothTime, speed);
 
-        Vector2 direction = (mousePosition - rigidbody2D.position).normalized;
-        Vector3 targetPosition = rigidbody2D.position + direction * 50 * Time.deltaTime;
-
-         float distance = Vector2.Distance(mousePosition, rigidbody2D.position);
-
-    if (distance > stopDistance)
-    {
-        rigidbody2D.MovePosition(targetPosition);
-    }
+    rigidbody2D.MovePosition(targetPosition);
 
        // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
      //   mousePosition.z = 0;
