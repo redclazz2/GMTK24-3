@@ -1,44 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MousePointerScript : MonoBehaviour
 {
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D mouseRigidBody2D;
     Transform mousePointerTransform;
     public float scaleFactor = 0.05f;
     public float minScale = 1;
     public float maxScale = 8;
-public float stopDistance = 0.1f; // Adjust this value as needed
-    public LayerMask obstacleLayer; // LayerMask for obstacles
+    public float minMass = 1;
+    public float maxMass = 100;
+    public float speed = 5f;
 
-private Vector2 velocity = Vector2.zero;
-public float speed = 5f;
-public float smoothTime = 0.1f; // Adjust this value to control the smoothness
     void Start()
     {
         Cursor.visible = false;
         mousePointerTransform = gameObject.GetComponent<Transform>();
-        rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        mouseRigidBody2D = gameObject.GetComponent<Rigidbody2D>();
 
         GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
     void Update()
     {
-        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mousePointerTransform.position = mousePosition;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 targetPosition = Vector2.Lerp(mouseRigidBody2D.position, mousePosition, speed * Time.deltaTime);
 
-       Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    Vector2 targetPosition = Vector2.Lerp(rigidbody2D.position, mousePosition, speed * Time.deltaTime);
-
-    rigidbody2D.MovePosition(targetPosition);
-
-       // Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-     //   mousePosition.z = 0;
-
-      //  Vector3 targetPosition = Vector3.Lerp(transform.position, mousePosition, 5 * Time.deltaTime);
-//mousePointerTransform.position = targetPosition;
+        mouseRigidBody2D.MovePosition(targetPosition);
 
         var scaleX = mousePointerTransform.localScale.x;
         var scaleY = mousePointerTransform.localScale.y;
@@ -67,15 +54,13 @@ public float smoothTime = 0.1f; // Adjust this value to control the smoothness
             }
         }
 
-        // Check for obstacles along the path to the target position
-        /*Vector3 direction = (targetPosition - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, targetPosition);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, obstacleLayer);
-        if (hit.collider != null)
-        {
-            // Stop at the point where the obstacle is hit
-            targetPosition = (Vector3)hit.point - direction * (transform.localScale.x / 2);
-        }*/
+        mouseRigidBody2D.mass = mousePointerTransform.localScale.x;
+        if(mouseRigidBody2D.mass > maxMass){
+            mouseRigidBody2D.mass = maxMass;
+        }
 
+        if(mouseRigidBody2D.mass < minMass){
+            mouseRigidBody2D.mass = minMass;
+        }
     }
 }
