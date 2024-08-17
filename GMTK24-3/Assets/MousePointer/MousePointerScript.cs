@@ -6,34 +6,52 @@ public class MousePointerScript : MonoBehaviour
 {
     Transform mousePointerTransform;
 
+    [SerializeField]
+    float scaleFactor = 0.05f;
+
+    [SerializeField]
+    float minScale = 1;
+
+    [SerializeField]
+    float maxScale = 8;
+
     void Start()
     {
         Cursor.visible = false;
-        mousePointerTransform = gameObject.GetComponent<Transform>();    
+        mousePointerTransform = gameObject.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
-    {   
-        //Vector3 mousePosition = Input.mousePosition;
+    {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePointerTransform.position = mousePosition;
 
-        var scroll =  Input.GetAxis("Mouse ScrollWheel");
+        var scaleX = mousePointerTransform.localScale.x;
+        var scaleY = mousePointerTransform.localScale.y;
 
-        if (scroll != 0) {
-            //WeaponNumber += Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10));
-            Debug.Log(scroll);
-
-            var scaleX = mousePointerTransform.localScale.x;
-            var scaleY = mousePointerTransform.localScale.y; 
-
-            if(scroll > 0){
-                //Bigger
-                mousePointerTransform.localScale = new Vector2(scaleX + 0.1f,scaleY + 0.1f);
-            }else{
-               mousePointerTransform.localScale = new Vector2(scaleX - 0.1f,scaleY - 0.1f);
+        if (Input.GetKey(KeyCode.W))
+        {
+            if (mousePointerTransform.localScale.x < maxScale)
+            {
+                mousePointerTransform.localScale = new Vector2(scaleX + scaleFactor, scaleY + scaleFactor);
+            }
+            else
+            {
+                mousePointerTransform.localScale = new Vector2(maxScale, maxScale);
             }
         }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (mousePointerTransform.localScale.x > minScale)
+            {
+                mousePointerTransform.localScale = new Vector2(scaleX - scaleFactor, scaleY - scaleFactor);
+            }
+            else
+            {
+                mousePointerTransform.localScale = new Vector2(minScale, minScale);
+            }
+        }
+
     }
 }
