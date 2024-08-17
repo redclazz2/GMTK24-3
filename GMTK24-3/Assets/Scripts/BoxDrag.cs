@@ -7,6 +7,8 @@ public class BoxDrag : MonoBehaviour
     private Vector2 difference = Vector2.zero;
     private Rigidbody2D rb;
 
+    private bool mouseCollision = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,15 +21,35 @@ public class BoxDrag : MonoBehaviour
     }
 
     private void OnMouseDrag()
-    { 
-        Vector2 newPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
+    {
+        if (mouseCollision)
+        {
+            Vector2 newPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
 
-        // Mover la caja a través de la física en lugar de simplemente cambiar su posición
-        rb.MovePosition(newPosition);
+            // Mover la caja a través de la física en lugar de simplemente cambiar su posición
+            rb.MovePosition(newPosition);
+        }
+
     }
 
     private void OnMouseUp()
     {
         rb.isKinematic = false; // Reactivar la física cuando se suelta la caja
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MousePointer"))
+        {
+            this.mouseCollision = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MousePointer"))
+        {
+            this.mouseCollision = false;
+        }
     }
 }

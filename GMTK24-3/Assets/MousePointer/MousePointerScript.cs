@@ -29,8 +29,8 @@ public float smoothTime = 0.1f; // Adjust this value to control the smoothness
         //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //mousePointerTransform.position = mousePosition;
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    Vector2 targetPosition = Vector2.SmoothDamp(rigidbody2D.position, mousePosition , ref velocity, smoothTime, speed);
+       Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    Vector2 targetPosition = Vector2.Lerp(rigidbody2D.position, mousePosition, speed * Time.deltaTime);
 
     rigidbody2D.MovePosition(targetPosition);
 

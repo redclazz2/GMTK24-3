@@ -102,9 +102,12 @@ MonoBehaviour:
   scaleFactor: 0.05
   minScale: 1
   maxScale: 8
+  stopDistance: 0.1
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1
+  speed: 100
+  smoothTime: 0.1
 --- !u!58 &-6653686719289786967
 CircleCollider2D:
   m_ObjectHideFlags: 0
