@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7955078100907715676}
   m_Layer: 0
   m_Name: BoxHeavy
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -184,6 +184,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc37d46b19180cf4093a1b02f71062d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDrag: 10
-  minDrag: 0.5
-  maxMass: 20
+  forceMultiplier: 10
