@@ -906,6 +906,18 @@ PrefabInstance:
       propertyPath: sceneTarget
       value: Level5
       objectReference: {fileID: 0}
+    - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
+      propertyPath: confettiSpawn.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
+      propertyPath: confettiSpawn.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
+      propertyPath: confettiSpawn.z
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 2497147913242096092, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1138,11 +1150,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3098490513896798787, guid: f6fb20124de565741902781c5e322f83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.48
+      value: 6.77
       objectReference: {fileID: 0}
     - target: {fileID: 3098490513896798787, guid: f6fb20124de565741902781c5e322f83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.23
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 3098490513896798787, guid: f6fb20124de565741902781c5e322f83, type: 3}
       propertyPath: m_LocalPosition.z

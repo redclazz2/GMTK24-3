@@ -261,6 +261,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 9cc7822fedada3846add0cf297007e3b, type: 3}
     - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
+      propertyPath: confettiSpawn.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
+      propertyPath: confettiSpawn.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
       propertyPath: levelFinishClip
       value: 
       objectReference: {fileID: 8300000, guid: 62396b07265304b49a582e9d5575cfcf, type: 3}
@@ -565,11 +573,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3098490513896798787, guid: f6fb20124de565741902781c5e322f83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.78
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3098490513896798787, guid: f6fb20124de565741902781c5e322f83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4384193
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 3098490513896798787, guid: f6fb20124de565741902781c5e322f83, type: 3}
       propertyPath: m_LocalPosition.z

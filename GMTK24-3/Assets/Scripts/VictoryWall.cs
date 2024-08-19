@@ -14,6 +14,8 @@ public class VictoryWall : MonoBehaviour
 
     public int numberOfBoxesDelivered = 0;
 
+    public Vector3 confettiSpawn;
+
     public AudioSource audioSource;
     public AudioClip victoryClip;
     public AudioClip levelFinishClip;
@@ -31,7 +33,7 @@ public class VictoryWall : MonoBehaviour
             numberOfBoxesDelivered ++;
             audioSource.PlayOneShot(victoryClip);
             Destroy(other.gameObject);
-            Instantiate(confetti);
+            Instantiate(confetti, confettiSpawn, Quaternion.identity);
 
          if (numberOfBoxesInLevel == numberOfBoxesDelivered)
         {
