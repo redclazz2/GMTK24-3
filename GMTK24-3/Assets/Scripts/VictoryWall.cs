@@ -14,6 +14,9 @@ public class VictoryWall : MonoBehaviour
 
     public int numberOfBoxesDelivered = 0;
 
+    public AudioSource audioSource;
+    public AudioClip victoryClip;
+
     void Start (){
         numberOfBoxesInLevel = GameObject.FindGameObjectsWithTag(targetTag).Length;
     }
@@ -23,6 +26,7 @@ public class VictoryWall : MonoBehaviour
         if (other.CompareTag(targetTag))
         {
             numberOfBoxesDelivered ++;
+            audioSource.PlayOneShot(victoryClip);
             Destroy(other.gameObject);
         }
     }

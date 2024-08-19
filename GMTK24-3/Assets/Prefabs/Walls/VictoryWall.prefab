@@ -144,4 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Box
-  sceneName: YourSceneName
+  sceneTarget: Level2
+  numberOfBoxesDelivered: 0
+  audioSource: {fileID: 8300000, guid: 9cc7822fedada3846add0cf297007e3b, type: 3}
