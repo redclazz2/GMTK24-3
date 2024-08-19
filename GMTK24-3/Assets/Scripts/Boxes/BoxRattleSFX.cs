@@ -14,6 +14,5 @@ public class BoxRattleSFX : MonoBehaviour
         if(!other.collider.CompareTag("MousePointer")){
             audioSource.PlayOneShot(RandomClip());
         }
-        
     }
 }

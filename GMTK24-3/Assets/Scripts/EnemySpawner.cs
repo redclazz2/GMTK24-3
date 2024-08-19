@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
             if(spawnCooldown >= 0.8) spawnCooldown -= 0.08f;
 
             Instantiate(toSpawn,new Vector2(
-                Random.Range(-8,8),
+                Random.Range(-7,8),
                 5
             ), Quaternion.identity);
         }
