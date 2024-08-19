@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: victoryClip
       value: 
       objectReference: {fileID: 8300000, guid: 9cc7822fedada3846add0cf297007e3b, type: 3}
+    - target: {fileID: 294673694051958827, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
+      propertyPath: levelFinishClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 62396b07265304b49a582e9d5575cfcf, type: 3}
     - target: {fileID: 2497147913242096092, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -213,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956947377070946883, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.43
+      value: 11.22
       objectReference: {fileID: 0}
     - target: {fileID: 8956947377070946883, guid: 78100673a27441c4ea38c7f83804b71b, type: 3}
       propertyPath: m_LocalPosition.y

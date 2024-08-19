@@ -16,6 +16,9 @@ public class VictoryWall : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip victoryClip;
+    public AudioClip levelFinishClip;
+
+    public GameObject confetti;
 
     void Start (){
         numberOfBoxesInLevel = GameObject.FindGameObjectsWithTag(targetTag).Length;
@@ -28,14 +31,22 @@ public class VictoryWall : MonoBehaviour
             numberOfBoxesDelivered ++;
             audioSource.PlayOneShot(victoryClip);
             Destroy(other.gameObject);
+            Instantiate(confetti);
+
+         if (numberOfBoxesInLevel == numberOfBoxesDelivered)
+        {
+            audioSource.PlayOneShot(levelFinishClip);
+            Invoke("ChangeScene",2) ;
+        }
         }
     }
 
     void Update()
     {
-        if (numberOfBoxesInLevel == numberOfBoxesDelivered)
-        {
-            SceneManager.LoadScene(sceneTarget);
-        }
+        
+    }
+
+    private void ChangeScene(){
+        SceneManager.LoadScene(sceneTarget);
     }
 }
