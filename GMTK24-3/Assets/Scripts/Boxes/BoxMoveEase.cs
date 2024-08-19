@@ -18,7 +18,7 @@ public class BoxMoveEase : MonoBehaviour
     if (otherRb != null && otherRb.mass >= requiredMass)
     {
         // Instead of using collision.impulse, you apply a custom force
-        Vector3 customForce = Vector3.zero * (otherRb.mass * forceMultiplier);
+        Vector3 customForce = new Vector3(0,1,0) * (otherRb.mass * forceMultiplier);
         boxRigidBody2D.AddForce(customForce, ForceMode2D.Impulse);
     }
     }

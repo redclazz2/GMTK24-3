@@ -54,7 +54,7 @@ public class MousePointerScript : MonoBehaviour
             }
         }
 
-        mouseRigidBody2D.mass = mousePointerTransform.localScale.x;
+        mouseRigidBody2D.mass = mousePointerTransform.localScale.x * 10;
         if(mouseRigidBody2D.mass > maxMass){
             mouseRigidBody2D.mass = maxMass;
         }

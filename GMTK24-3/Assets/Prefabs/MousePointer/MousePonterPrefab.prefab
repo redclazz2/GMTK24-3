@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1371823041010296286}
   - component: {fileID: -6653686719289786967}
   - component: {fileID: 7132901275287281756}
-  - component: {fileID: 4633968873745704788}
+  - component: {fileID: 6342526776198016583}
   m_Layer: 31
   m_Name: MousePonterPrefab
   m_TagString: MousePointer
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5998073777784940984}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.18326513, w: 0.9830636}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.12}
 --- !u!212 &-1422287977637926421
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d84563326574f5c4d98087c0e376d5ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1d9a9f42d0923146bfbc6e968237ead, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a337a6d4486cc2c4eacd9b4f87223fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 0.05
-  minScale: 1
-  maxScale: 8
+  scaleFactor: 0.005
+  minScale: 0.08
+  maxScale: 0.5
   minMass: 1
-  maxMass: 100
+  maxMass: 5
   speed: 100
 --- !u!58 &-6653686719289786967
 CircleCollider2D:
@@ -113,7 +113,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5998073777784940984}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -140,7 +140,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.13283315
+  m_Radius: 1.37
 --- !u!50 &7132901275287281756
 Rigidbody2D:
   serializedVersion: 4
@@ -168,8 +168,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &4633968873745704788
-EdgeCollider2D:
+--- !u!61 &6342526776198016583
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -200,28 +200,16 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015604675, y: 0.679751}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.89, y: 3.84}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.826252, y: 1.43864}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.0055861175, y: -0.12780672}
-  - {x: 0.08192972, y: -0.12568742}
-  - {x: 0.12329325, y: -0.08439461}
-  - {x: 0.12941173, y: -0.0478321}
-  - {x: 0.12788701, y: -0.005919339}
-  - {x: 0.11217585, y: 0.031458117}
-  - {x: 0.06834876, y: 0.062234197}
-  - {x: -0.00831151, y: 0.060167298}
-  - {x: -0.033193577, y: 0.12247646}
-  - {x: -0.064068966, y: 0.1312954}
-  - {x: -0.09797485, y: 0.12366618}
-  - {x: -0.1063304, y: 0.08985525}
-  - {x: -0.074757464, y: -0.014025146}
-  - {x: -0.11052915, y: -0.014934477}
-  - {x: -0.13234255, y: -0.049446546}
-  - {x: -0.109318964, y: -0.09163501}
-  - {x: -0.031461053, y: -0.09966743}
-  - {x: 0.006471161, y: -0.12941436}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0

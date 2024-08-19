@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - MousePointer
   - Box
+  - Enemy
   layers:
   - Default
   - TransparentFX
