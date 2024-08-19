@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792cd976dc90e964d984899d99a26009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyedAnnouncer: {fileID: 5446686783206017967, guid: 6906561a33402db47867843d3c3473dd, type: 3}
   audioSource: {fileID: 8012265408242698449}
   destroyAudioClip: {fileID: 8300000, guid: 967dccda4ab35044fa63dfc6d0725da2, type: 3}
 --- !u!114 &2487520553595457451

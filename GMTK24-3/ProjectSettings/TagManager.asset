@@ -8,6 +8,8 @@ TagManager:
   - MousePointer
   - Box
   - Enemy
+  - BoxDestroyedAnnouncer
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
