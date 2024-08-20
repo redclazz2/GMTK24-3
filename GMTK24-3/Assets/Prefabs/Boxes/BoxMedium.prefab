@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13eaa823270e681409a3df695b85bd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dustParticles: {fileID: 8201692384316934575, guid: c68e538d6a33d1544a2f3d8ab0e92268, type: 3}
   audioSource: {fileID: 6731129669469292916}
   audioClipArray:
   - {fileID: 8300000, guid: 0b29977f158c9764aa6c169564144cc9, type: 3}

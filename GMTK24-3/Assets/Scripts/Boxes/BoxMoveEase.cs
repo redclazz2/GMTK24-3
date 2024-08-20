@@ -11,15 +11,15 @@ public class BoxMoveEase : MonoBehaviour
         boxRigidBody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
-     void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-       Rigidbody otherRb = collision.rigidbody;
+        Rigidbody otherRb = collision.rigidbody;
 
-    if (otherRb != null && otherRb.mass >= requiredMass)
-    {
-        // Instead of using collision.impulse, you apply a custom force
-        Vector3 customForce = new Vector3(0,1,0) * (otherRb.mass * forceMultiplier);
-        boxRigidBody2D.AddForce(customForce, ForceMode2D.Impulse);
-    }
+        if (otherRb != null && otherRb.mass >= requiredMass)
+        {
+            // Instead of using collision.impulse, you apply a custom force
+            Vector3 customForce = new Vector3(0, 1, 0) * (otherRb.mass * forceMultiplier);
+            boxRigidBody2D.AddForce(customForce, ForceMode2D.Impulse);
+        }
     }
 }
