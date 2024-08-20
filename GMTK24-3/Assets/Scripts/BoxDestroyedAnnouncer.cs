@@ -14,6 +14,7 @@ public class BoxDestroyedAnnouncer : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("MusicPlayer"));
         audioSource.PlayOneShot(tune);
         Invoke("RestartLevel",5f);
+       // Time.timeScale = 0;
     }
 
     void RestartLevel(){

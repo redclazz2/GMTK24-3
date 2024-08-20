@@ -10,6 +10,10 @@ public class MousePointerScript : MonoBehaviour
     public float minMass = 1;
     public float maxMass = 100;
     public float speed = 5f;
+    
+    public float sizeRestriction = 8;
+    private bool sizeRestricted = false;
+
 
     void Start()
     {
@@ -30,7 +34,7 @@ public class MousePointerScript : MonoBehaviour
         var scaleX = mousePointerTransform.localScale.x;
         var scaleY = mousePointerTransform.localScale.y;
 
-        if (Input.GetKey(KeyCode.W))
+        if (!sizeRestricted && Input.GetKey(KeyCode.W))
         {
             if (mousePointerTransform.localScale.x < maxScale)
             {
@@ -42,7 +46,7 @@ public class MousePointerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (!sizeRestricted && Input.GetKey(KeyCode.S))
         {
             if (mousePointerTransform.localScale.x > minScale)
             {
@@ -61,6 +65,25 @@ public class MousePointerScript : MonoBehaviour
 
         if(mouseRigidBody2D.mass < minMass){
             mouseRigidBody2D.mass = minMass;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.CompareTag("SizeRestriction")){
+            this.sizeRestricted = true;
+        }
+    }
+
+     void OnTriggerStay2D(Collider2D other){
+        if(other.CompareTag("SizeRestriction")){
+            this.sizeRestricted = true;
+        }
+    }
+
+
+    void OnTriggerExit2D(Collider2D other){
+        if(other.CompareTag("SizeRestriction")){
+            this.sizeRestricted = false;
         }
     }
 }

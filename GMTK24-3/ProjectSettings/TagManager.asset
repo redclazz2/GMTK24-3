@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - BoxDestroyedAnnouncer
   - MusicPlayer
+  - SizeRestriction
   layers:
   - Default
   - TransparentFX
