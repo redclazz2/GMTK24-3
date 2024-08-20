@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6574274643036597293, guid: 1c60a03c9e749e6448808089e721ce1a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 441ac7192ff21c544922ca82953c9b4c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1821,6 +1825,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.754717
       objectReference: {fileID: 0}
+    - target: {fileID: 8376094782192066396, guid: b5404d76d4618f14196a800d111ab0a6, type: 3}
+      propertyPath: dustParticles
+      value: 
+      objectReference: {fileID: 8201692384316934575, guid: c68e538d6a33d1544a2f3d8ab0e92268, type: 3}
     - target: {fileID: 8658337904908738648, guid: b5404d76d4618f14196a800d111ab0a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.49
