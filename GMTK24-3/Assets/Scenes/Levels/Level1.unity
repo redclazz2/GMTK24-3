@@ -2765,6 +2765,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoxAnnouncer
       objectReference: {fileID: 0}
+    - target: {fileID: 4323658243296721537, guid: c8452f5883a4359469c0e301c418c31b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323658243296721537, guid: c8452f5883a4359469c0e301c418c31b, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323658243296721537, guid: c8452f5883a4359469c0e301c418c31b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323658243296721537, guid: c8452f5883a4359469c0e301c418c31b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6587935864997362673, guid: c8452f5883a4359469c0e301c418c31b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
